@@ -1,0 +1,26 @@
+.s-cart-summary{
+    &-wrapper{
+         padding: 10px;
+        border-radius: 10px;
+       
+    }
+    &-icon{
+        color: white !important;
+        font-size: 30px;
+    }
+    &-count{
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    &-total{
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+.s-cart-summary-icon svg{
+    width: 26px;
+    height: 26px;
+    color: white;
+}

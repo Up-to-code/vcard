@@ -1,0 +1,24 @@
+.s-slider-wrapper {
+    &-container{
+  
+    }
+    &-thumbs{
+      &-container{
+  
+      }
+    }
+    &-button-next{
+      svg{
+      display: none !important;
+      }
+    }
+    &-button-prev{
+      svg{
+        display: none !important;
+      }
+      display: none !important;
+    }
+  }
+  .s-slider-block__title-nav{
+   display: none !important;
+  }

@@ -73,11 +73,11 @@ salla-slider.photos-slider {
   }
 
   .swiper-slide {
-    @apply h-auto w-full lg:w-[80%] relative rounded-md overflow-hidden mx-1.5 md:mx-3 lg:mx-4;
+    @apply h-auto w-full  relative rounded-md overflow-hidden mx-1.5 md:mx-3 lg:mx-4;
   }
   
   .swiper-pagination-bullet:not(.swiper-pagination-bullet-active){
-    @apply bg-gray-300;
+    @apply bg-zinc-300;
   }
   
   @media (max-width: 1024px) {
