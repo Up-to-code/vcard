@@ -817,7 +817,7 @@
                     "id": "collection",
                     "type": "collection",
                     "format": "collection",
-                    "label": "Collection",
+                    "label": "videos_and_photos",
                     "description": null,
                     "labelHTML": null,
                     "item_label": "فديو مع صور مدمجه",
