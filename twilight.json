@@ -812,7 +812,88 @@
             "title": "قديو مع بعض الصور المدمجه",
             "icon": "sicon-clapboard",
             "path": "home.video_and_photos",
-            "fields": []
+            "fields": [
+                {
+                    "id": "collection",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "Collection",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": "فديو مع صور مدمجه",
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "collection.video_url",
+                            "type": "string",
+                            "format": "url",
+                            "inputType": "url",
+                            "label": "video_url",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://salla.sa",
+                            "icon": "sicon-link",
+                            "value": null,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "collection.photos",
+                            "type": "collection",
+                            "format": "collection",
+                            "label": "photos",
+                            "description": "الصور",
+                            "labelHTML": null,
+                            "item_label": null,
+                            "icon": "sicon-list-add",
+                            "fields": [],
+                            "value": null,
+                            "minLength": 1,
+                            "maxLength": 5
+                        },
+                        {
+                            "id": "collection.image_2",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image 2",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": true
+                        },
+                        {
+                            "id": "collection.image_1",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image 1",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": true
+                        },
+                        {
+                            "id": "collection.image",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": true
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "",
