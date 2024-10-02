@@ -930,6 +930,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "6954ac13-316d-4a01-8c9a-2b0edb5fd365",
+            "title": "عونان لي  عرض",
+            "icon": "sicon-ul",
+            "path": "home.titile_for_des",
+            "fields": []
         }
     ],
     "support_url": "",
