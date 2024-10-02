@@ -834,23 +834,9 @@
                             "placeholder": "e.g. https://salla.sa",
                             "icon": "sicon-link",
                             "value": null,
-                            "required": false,
+                            "required": true,
                             "minLength": 6,
-                            "maxLength": 30
-                        },
-                        {
-                            "id": "collection.photos",
-                            "type": "collection",
-                            "format": "collection",
-                            "label": "photos",
-                            "description": "الصور",
-                            "labelHTML": null,
-                            "item_label": null,
-                            "icon": "sicon-list-add",
-                            "fields": [],
-                            "value": null,
-                            "minLength": 1,
-                            "maxLength": 5
+                            "maxLength": "300"
                         },
                         {
                             "id": "collection.image_2",
