@@ -886,7 +886,50 @@
             "title": "مزيا",
             "icon": "sicon-keypad",
             "path": "home.mazyh",
-            "fields": []
+            "fields": [
+                {
+                    "id": "mazyh",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "mazyh",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "mazyh.icone",
+                            "type": "string",
+                            "format": "image",
+                            "label": "icone",
+                            "description": "الايقونه",
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false
+                        },
+                        {
+                            "id": "mazyh.title",
+                            "type": "string",
+                            "format": "textarea",
+                            "label": "title",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "عنوتن",
+                            "icon": "sicon-typography",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": "6",
+                            "maxLength": "22"
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "",
