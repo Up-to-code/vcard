@@ -1,4 +1,15 @@
-<div class="video-and-photos">
-     sssss
-
+<div class="video-and-photos ">
+  <div class="video-and-photos__video">
+    {% for video in component.collection %}
+    <div class="video-and-photos__video-item">
+      <video src="{{  video.video_url }}" autoplay loop muted playsinline width="100%"></video>
+     <div class=" flex gap-4 px-5 -mt-[10%] w-full justify-around">
+        <img src="{{ video.image}}" alt="{{ video.image_alt }}" class=" w-[32%]">
+        <img src="{{ video.image_1}}" alt="{{ video.image_alt }}" class=" w-[32%]">
+        <img src="{{ video.image_2}}" alt="{{ video.image_alt }}" class=" w-[32%]">
+    
+    </div>
+    </div>
+    {% endfor %}
+  </div>
 </div>
