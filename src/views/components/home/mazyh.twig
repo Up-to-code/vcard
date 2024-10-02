@@ -1,0 +1,29 @@
+<section
+  class="s-block s-block--features angel-features dark py-8 angel_anime animate__ animate__fadeIn"
+  data-wow-delay="0.1s"
+  style="
+    background-color: rgb(20, 22, 31);
+    visibility: visible;
+    animation-delay: 0.1s;
+  "
+>
+  <span
+    class="s-design-before s-design-invisible-dom"
+ 
+  ></span>
+  <div class="container">
+    <div class="grid grid-cols-3 items-baseline gap-2 sm:gap-6 lg:gap-4">
+      {% for item in mazyh %}
+      <div class="angel-feature flex-center flex-col" data-wow-delay="0.1s">
+        <div class="flex-center h-14 w-14 md:h-20 md:w-20">
+          <div class="lazy__bg lazy_avatar lazy hover:scale-110 !bg-transparent entered loaded" data-bg="{{item.icone}}" data-ll-status="loaded" style="background-image: url('{{item.icone}}');"></div>
+        </div>
+        <div class="flex-center flex-col mt-2">
+          <h4 class="text-center text-base md:text-lg da-tm">{{item.title}}</h4>
+          <p class="text-center text-sm text-gray-600 da-ts">{{item.description}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
