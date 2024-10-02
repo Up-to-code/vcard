@@ -1,7 +1,24 @@
 .s-button-element {
-  @apply bg-primary text-white text-sm font-semibold py-1 px-3 rounded-md hover:bg-primary-500 hover:scale-105 transition-transform duration-300 max-w-[150px];
+  background-color: var(--color-primary);
+  color: var(--main-text-color);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  max-width: 150px;
+  transition: background-color 0.15s;
+}
+
+.s-button-element:hover {
+  background-color: var(--color-primary-d);
 }
 
 .s-button-element__icon {
-  @apply w-4 h-4 transition-transform duration-300 hover:rotate-12 hover:scale-110;
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.15s;
+}
+
+.s-button-element__icon:hover {
+  transform: rotate(12deg) scale(1.1);
 }
