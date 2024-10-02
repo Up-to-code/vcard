@@ -936,7 +936,80 @@
             "title": "عونان لي  عرض",
             "icon": "sicon-ul",
             "path": "home.titile_for_des",
-            "fields": []
+            "fields": [
+                {
+                    "id": "image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "description": "الشعار",
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": true
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title",
+                    "description": "عةان اوال",
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": "60"
+                },
+                {
+                    "id": "title_2",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title 2",
+                    "description": "عنوان ثاني",
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": "60"
+                },
+                {
+                    "id": "redbox",
+                    "type": "string",
+                    "format": "text",
+                    "label": "redbox",
+                    "description": "نص قي صندوق احمر",
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": "60"
+                },
+                {
+                    "id": "more_url",
+                    "type": "string",
+                    "format": "url",
+                    "inputType": "url",
+                    "label": "more_url",
+                    "description": "رابط لي عرض المزيد",
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://salla.sa",
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": "300"
+                }
+            ]
         }
     ],
     "support_url": "",
