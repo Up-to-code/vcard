@@ -1,0 +1,78 @@
+<section
+  class="s-block s-angel--divider is_flying angel_anime animate__ animate__fadeIn merge-bottom centered-title mb-1"
+  data-wow-delay="0.1s"
+  style="visibility: visible; animation-delay: 0.1s;"
+>
+  <span class="s-design-before s-design-invisible-dom max-w-[100px] opacity-80"></span>
+
+  <div class="divider-container container">
+    <div class="s-block__title divider-title">
+      <div class="flex flex-col w-full">
+        <div class="flex-center w-full gap-2">
+          <!-- Top horizontal line -->
+          <span
+            class="inline-block vertical-lines h-[1px] w-full bg-gray-300 da-bgg angel_anime animate__ animate__fadeInLeft"
+            data-wow-delay="0.8s"
+            style="visibility: visible; animation-delay: 0.8s;"
+          ></span>
+
+          <!-- Icon, title, and countdown -->
+          <div class="flex-center flex-col px-4 md:px-10 z-1 gap-1 md:gap-2">
+            <div class="divider-icon">
+              <div class="img-container flex flying-obj spinning-obj">
+                <img
+                  src="{{component.image}}"
+                  alt="Icon"
+                  class="w-full h-full object-contain lazy max-h-12 angel_anime animate__ animate__fadeIn"
+                  data-wow-delay="0.5s"
+                  loading="lazy"
+                  style="visibility: visible; animation-delay: 0.5s;"
+                />
+              </div>
+            </div>
+
+            <!-- Title and description -->
+            <div class="flex flex-col items-center justify-center text-center">
+              <h2
+                class="w-full px-1 da-cp whitespace-nowrap angel_anime animate__ animate__fadeIn text-primary mb-1"
+                data-wow-delay="0.1s"
+                style="visibility: visible; animation-delay: 0.1s;"
+              >
+                {{component.title}}
+              </h2>
+              <p
+                class="text-center text-sm md:text-lg text-white mb-1"
+                data-wow-delay="0.2s"
+                style="visibility: visible; animation-delay: 0.2s;"
+              >
+                {{component.title_2}}
+              </p>
+            </div>
+
+      
+             <div class="bg-red-500 text-white px-2 py-1 mb-1">
+           <p>
+            {{component.redbox}}
+           </p>
+             </div>
+            <!-- 'More' Link -->
+            <a
+              href="{{component.more_url}}"
+              class="s-block__display-all flex-center divider-url angel_anime animate__ animate__fadeIn text-zinc-100 mb-1"
+              data-wow-delay="0.3s"
+              aria-label="تصفح المزيد"
+              style="visibility: visible; animation-delay: 0.3s;"
+            >
+              تصفح المزيد
+            </a>
+          </div>
+
+          <!-- Bottom horizontal line -->
+          <span class="s-design-before s-design-invisible-dom max-w-[100px] opacity-80"></span>
+
+        </div>
+      </div>
+    </div>
+
+  <span class="s-design-invisible-dom s-design-after"></span>
+</section>

@@ -2,3 +2,8 @@
 .s-user-menu-trigger{
    background: transparent !important;
 }
+@media (min-width: 768px) {
+   .s-block__title p:where([dir="rtl"], [dir="rtl"] *) {
+       padding-left: 0rem !important;
+   }
+}
