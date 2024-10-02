@@ -1,0 +1,7 @@
+.s-button-element {
+  @apply bg-primary text-white text-sm font-semibold py-1 px-3 rounded-md hover:bg-primary-500 hover:scale-105 transition-transform duration-300 max-w-[150px];
+}
+
+.s-button-element__icon {
+  @apply w-4 h-4 transition-transform duration-300 hover:rotate-12 hover:scale-110;
+}

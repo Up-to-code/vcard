@@ -24,14 +24,96 @@ true) %}
 
   <div class="flex flex-wrap gap-4">
     {% for product in products %}
-  <div class="max-w-[200px] rounded-md bg-[#252C46]">
-    <a href="{{ product.url }}">
-      <img src="{{ product.image.url }}" alt="{{ product.image.alt }}" class="s-product-card-image"/>
-    </a>
-    <p>
-       {{ product.name }}
-    </p>
-  </div>
+    <div
+      class="max-w-[220px] rounded-lg bg-[#252C46] pb-2 relative w-full shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out"
+    >
+      <!-- Sale Badge (Top-Right) -->
+      {% if product.on_sale %}
+      <div
+        class="absolute top-2 right-2 bg-red-500 text-white text-xs px-3 py-1 rounded-md animate-pulse"
+      >
+        على وشك النفاد
+      </div>
+      {% endif %}
+
+      <!-- Product Image -->
+      <a href="{{ product.url }}" class="block relative overflow-hidden group">
+        <img
+          alt="{{ product.image.alt }}"
+          src="https://cdn.salla.sa/VqYoKx/77912122-9abf-402f-8256-5c72d85d2b1a-500x500-H3CYP2wRIHYPDAzqObwnnSy99OsbNL5Uyb5bVTpZ.jpg"
+          class="w-full h-[150px] object-contain mb-3 transition-transform duration-300 group-hover:scale-110"
+        />
+      </a>
+
+      <!-- Product Name -->
+      <p
+        class="text-white text-sm md:text-base text-center leading-tight mb-2 px-2 line-clamp-2"
+      >
+        {{ product.name }}
+      </p>
+
+      <!-- Rating Stars -->
+      <div class="flex justify-center mb-2">
+        {% for i in 1..5 %}
+        <svg
+          class="w-4 h-4 text-yellow-400"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M12 .587l3.668 7.431L24 9.748l-6 5.849L19.335 24 12 20.309 4.665 24 6 15.597l-6-5.849 8.332-1.73z"
+          ></path>
+        </svg>
+        {% endfor %}
+      </div>
+
+      <!-- Price Section -->
+      <div class="flex flex-col justify-center items-center gap-1 mb-4">
+        <span class="text-teal-300 text-base font-bold">
+          {{ product.price | money }}
+        </span>
+        {% if product.on_sale %}
+        <span class="text-gray-400 text-sm line-through">
+          {{ product.regular_price | money }}
+        </span>
+        {% endif %}
+      </div>
+
+      <!-- Add to Cart / Wishlist -->
+      <div class="flex justify-between items-center px-2">
+        <!-- Add to Cart Button -->
+        <salla-add-product-button product-id="{{ product.id }}">
+       
+            أضف للسلة
+            <svg
+              class="w-4 h-4 transition-transform duration-300 hover:rotate-12 hover:scale-110"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 6h15l-1.5 9h-13L3 3H1"></path>
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+            </svg>
+         
+        </salla-add-product-button>
+
+        <!-- Wishlist Button -->
+        <button
+          class="text-gray-400 hover:text-primary transition-transform duration-200"
+        >
+          <svg
+            class="w-5 h-5 transition-colors duration-300 hover:text-red-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          ></svg>
+        </button>
+      </div>
+    </div>
     {% endfor %}
   </div>
 </section>
