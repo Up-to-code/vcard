@@ -1,119 +1,79 @@
-{# | Variable | Type | Description |
-|-----------------|------------|------------------------------------------------------------------|
-| display_all_url | ?string | If it's existed, mean should show load more link
-to this url | | title | string | | | products | Products[] | | | position | Int
-| Sorting number start from zero | | limit | Int | Number of products to be
-shown #} {% set is_vertical = theme.settings.get('vertical_fixed_products',
-true) %}
-<section class="">
-  y {% if title %}
+<section class="px-4">
   <div class="s-block__title">
     <div class="right-side">
       <h2 class="text-white">{{ title }}</h2>
-      {#
-      <p>عنوان فرعي توصيفي صغير</p>
-      #}
     </div>
+    
     {% if display_all_url %}
-    <a href="{{ display_all_url }}" class="s-block__display-all"
-      >{{ trans("blocks.home.display_all") }} <i class="sicon-arrow-left"></i
-    ></a>
+      <a href="{{ display_all_url }}" class="s-block__display-all">
+        {{ trans("blocks.home.display_all") }} 
+        <i class="sicon-arrow-left"></i>
+      </a>
     {% endif %}
   </div>
-  {% endif %}
 
   <div class="flex flex-wrap gap-4">
     {% for product in products %}
-    <div
-      class="max-w-[220px] rounded-lg bg-[#252C46] pb-2 relative w-full shadow-lg hover:shadow-xl    transition-transform duration-300 ease-in-out"
-    >
-      <!-- Sale Badge (Top-Right) -->
-      {% if product.on_sale %}
-      <div
-        class="absolute top-2 right-2 bg-red-500 text-white text-xs px-3 py-1 rounded-md animate-pulse"
-      >
-        على وشك النفاد
-      </div>
-      {% endif %}
+      <a href="{{ product.url }}">
+        <div class="product-card max-w-[220px] w-max rounded-lg bg-[#252C46] pb-2 relative shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out">
+          
+          <!-- Sale Badge -->
+          {% if product.promotion_title|length > 0 %}
+            <div class="absolute z-10 top-2 right-2 bg-red-500 text-white text-xs px-3 py-1 rounded-md animate-pulse">
+              {{ product.promotion_title   }}
+            </div>
+          {% endif %}
+          
+          <!-- Product Image -->
+          <div class="block relative overflow-hidden group rounded-md">
+            <img src="{{ product.image.url }}" alt="{{ product.image.alt }}" class="w-full min-w-[200px] max-h-[200px] object-cover mb-3 transition-transform duration-300 rounded-md" />
+          </div>
 
-      <!-- Product Image -->
-      <a href="{{ product.url }}" class="block relative overflow-hidden group">
-        <img
-          alt="{{ product.image.alt }}"
-          src="https://cdn.salla.sa/VqYoKx/77912122-9abf-402f-8256-5c72d85d2b1a-500x500-H3CYP2wRIHYPDAzqObwnnSy99OsbNL5Uyb5bVTpZ.jpg"
-          class="w-full h-[150px] object-contain mb-3 transition-transform duration-300 group-hover:scale-110"
-        />
+          <!-- Product Name -->
+          <p class="text-white text-sm md:text-base text-center leading-tight mb-2 px-2 line-clamp-2">
+            {{ product.name }}
+          </p>
+
+          <!-- Subtitle (if exists) -->
+          {% if product.subtitle %}
+            <div class="flex justify-center mb-2">
+              <p class="text-gray-400 text-sm">{{ product.subtitle }}</p>
+            </div>
+          {% endif %}
+
+          <!-- Price Section -->
+          <div class="flex  justify-center items-center gap-1 mb-4">
+            {% if product.regular_price|money != product.sale_price|money %}
+              <!-- New Price (Sale Price) -->
+              <span class="text-teal-300 text-base font-bold">{{ product.sale_price | money }}</span>
+              <!-- Old Price (Regular Price) -->
+              <span class="text-gray-400 text-sm line-through">{{ product.regular_price | money }}</span>
+            {% else %}
+              <!-- Regular Price (No Sale) -->
+              <span class="text-teal-300 text-base font-bold">{{ product.price | money }}</span>
+            {% endif %}
+          </div>
+
+          <!-- Add to Cart / Wishlist -->
+          <div class="flex justify-between items-center px-2 z-10">
+            <salla-add-product-button product-id="{{ product.id }}">
+              <div class="flex items-center gap-2">
+                <span>أضف للسلة</span>
+                <svg class="w-4 h-4 transition-transform duration-300 hover:rotate-12 hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M6 6h15l-1.5 9h-13L3 3H1"></path>
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                </svg>
+              </div>
+            </salla-add-product-button>
+            
+            <button class="text-gray-400 hover:text-red-500 transition-transform duration-200" @click="addToWishlist({{ product.id }})">
+              <i class="sicon-heart text-xl"></i>
+            </button>
+
+          </div>
+        </div>
       </a>
-
-      <!-- Product Name -->
-      <p
-        class="text-white text-sm md:text-base text-center leading-tight mb-2 px-2 line-clamp-2"
-      >
-        {{ product.name }}
-      </p>
-
-      <!-- Rating Stars -->
-      <div class="flex justify-center mb-2">
-        {% for i in 1..5 %}
-        <svg
-          class="w-4 h-4 text-yellow-400"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
-          <path
-            d="M12 .587l3.668 7.431L24 9.748l-6 5.849L19.335 24 12 20.309 4.665 24 6 15.597l-6-5.849 8.332-1.73z"
-          ></path>
-        </svg>
-        {% endfor %}
-      </div>
-
-      <!-- Price Section -->
-      <div class="flex flex-col justify-center items-center gap-1 mb-4">
-        <span class="text-teal-300 text-base font-bold">
-          {{ product.price | money }}
-        </span>
-        {% if product.on_sale %}
-        <span class="text-gray-400 text-sm line-through">
-          {{ product.regular_price | money }}
-        </span>
-        {% endif %}
-      </div>
-
-      <!-- Add to Cart / Wishlist -->
-      <div class="flex justify-between items-center px-2">
-        <!-- Add to Cart Button -->
-        <salla-add-product-button product-id="{{ product.id }}">
-       
-            أضف للسلة
-            <svg
-              class="w-4 h-4 transition-transform duration-300 hover:rotate-12 hover:scale-110"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M6 6h15l-1.5 9h-13L3 3H1"></path>
-              <circle cx="9" cy="21" r="1"></circle>
-              <circle cx="20" cy="21" r="1"></circle>
-            </svg>
-         
-        </salla-add-product-button>
-
-        <!-- Wishlist Button -->
-        <button
-          class="text-gray-400 hover:text-primary transition-transform duration-200"
-        >
-          <svg
-            class="w-5 h-5 transition-colors duration-300 hover:text-red-500"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          ></svg>
-        </button>
-      </div>
-    </div>
     {% endfor %}
   </div>
 </section>

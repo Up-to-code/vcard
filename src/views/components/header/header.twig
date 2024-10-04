@@ -9,7 +9,7 @@
         <div class="flex items-center justify-between relative">
           
           {# Left Section: Mobile Menu Icon and Custom Menu #}
-          <div class="flex items-center">
+          <div class="flex items-center z-40">
             <a
               class="lg:hidden mburger mburger--collapse leading-none rtl:ml-4 ltr:mr-4"
               href="#mobile-menu"
@@ -45,11 +45,11 @@
           </div>
 
           {# Right Section: User Menu and Cart Summary #}
-          <div class="flex items-center justify-end gap-6">
+          <div class="flex items-center justify-end gap-6 z-40">
             
             {# User Menu Icon or Login Button #}
             {% if user.type == 'user' %}
-            <salla-user-menu avatar-only show-header></salla-user-menu>
+            <salla-user-menu avatar-only show-header  ></salla-user-menu>
             {% else %}
             <button
               class="header-btn"

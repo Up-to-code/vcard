@@ -1,16 +1,21 @@
 .s-button-element {
   background-color: var(--color-primary);
-  color: var(--main-text-color);
+  color: white;
   font-size: var(--font-sm);
   font-weight: 600;
   padding: 0.25rem 0.75rem;
   border-radius: 0.375rem;
   max-width: 150px;
   transition: background-color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .s-button-element:hover {
-  background-color: var(--color-primary-d);
+  opacity: 0.9;
+  cursor: pointer;
 }
 
 .s-button-element__icon {
