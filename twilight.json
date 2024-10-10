@@ -1085,10 +1085,10 @@
                             "maxLength": 30
                         },
                         {
-                            "id": "futures.sbutitle",
+                            "id": "futures.subtitle",
                             "type": "string",
                             "format": "text",
-                            "label": "sbutitle",
+                            "label": "subtitle",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
