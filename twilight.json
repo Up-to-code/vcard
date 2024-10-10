@@ -1085,7 +1085,7 @@
                             "maxLength": 30
                         },
                         {
-                            "id": "futures.subtitle",
+                            "id": "futures.stitle",
                             "type": "string",
                             "format": "text",
                             "label": "اعنوان الفرعي",
