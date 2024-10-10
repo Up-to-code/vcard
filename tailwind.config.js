@@ -31,9 +31,10 @@ module.exports = {
                 'auto-fill'  : 'repeat(auto-fill, 290px)',
             },
             colors             : {
-                'dark'         : '#1D1F1F',
-                'darker'       : '#0E0F0F',
+                'dark'         : '#252C46',
+                'darker'       : '#1A1F32',
                 'danger'       : '#AE0A0A'
+
             },
             spacing: {
               '3.75': '15px',
