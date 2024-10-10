@@ -1010,6 +1010,13 @@
                     "maxLength": "300"
                 }
             ]
+        },
+        {
+            "key": "16f7220a-65c8-4622-be67-b395652d41e8",
+            "title": "مزيا المتجر",
+            "icon": "sicon-store",
+            "path": "home.futures",
+            "fields": []
         }
     ],
     "support_url": "",
