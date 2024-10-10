@@ -1088,7 +1088,7 @@
                             "id": "futures.subtitle",
                             "type": "string",
                             "format": "text",
-                            "label": "subtitle",
+                            "label": "اعنوان الفرعي",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
