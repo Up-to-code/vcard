@@ -1,8 +1,8 @@
-<div class="bg-dark py-12 px-4 my-8">
+<div class="bg-dark py-8 px-4 my-8">
     <div class="container mx-auto">
   
       <!-- Title Section -->
-      <div class="futures-title flex flex-col gap-2 justify-center items-center my-6 text-center">
+      <div class=" flex flex-col gap-2 justify-center items-center my-4 text-center">
         <p class=" text-primary text-xl md:text-2xl font-bold">{{ component.title }}</p>
         <p class="text-gray-400 text-md md:text-lg">{{ component.subtitle }}</p>
       </div>
@@ -12,12 +12,13 @@
         {% for item in component.futures %}
         <div class="w-max flex flex-col items-center text-center p-4 transition-transform transform hover:scale-105">
           <!-- Image -->
-          <img src="{{ item.image }}" alt="{{ item.title }}" class="flex-center h-14 w-14 md:h-20 md:w-20">
+          <img src="{{ item.image }}" alt="{{ item.title }}" class="flex-center h-16     w-16 md:h-20 md:w-20">
           <!-- Title and Subtitle -->
           <p class="text-white  font-semibold">{{ item.title }}</p>
           <p class="text-gray-400 text-sm">{{ item.stitle }}</p>
         </div>
         {% endfor %}
+
       </div>
   
     </div>
