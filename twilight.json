@@ -1111,7 +1111,25 @@
             "title": "فئات",
             "icon": "sicon-ol",
             "path": "home.categories",
-            "fields": []
+            "fields": [
+                {
+                    "id": "dropdown_list",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "Dropdown List",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [],
+                    "options": [],
+                    "source": "Categories",
+                    "multichoice": true,
+                    "searchable": true,
+                    "required": true,
+                    "public": true,
+                    "value": []
+                }
+            ]
         }
     ],
     "support_url": "",
