@@ -1161,7 +1161,7 @@
                             "value": null,
                             "multilanguage": false,
                             "required": false,
-                            "minLength": 6,
+                            "minLength": "3",
                             "maxLength": 30
                         },
                         {
@@ -1189,7 +1189,7 @@
                             "value": null,
                             "required": false,
                             "minLength": 6,
-                            "maxLength": 30
+                            "maxLength": "10000"
                         }
                     ],
                     "value": [],
