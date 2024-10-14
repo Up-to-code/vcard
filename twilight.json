@@ -1105,6 +1105,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "eae4bee7-c65f-41e5-b734-f016f98d7a26",
+            "title": "فئات",
+            "icon": "sicon-ol",
+            "path": "home.categories",
+            "fields": []
         }
     ],
     "support_url": "",
