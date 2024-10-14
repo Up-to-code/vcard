@@ -1105,6 +1105,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "b42a4437-b9df-412c-9adf-bdc05ec9f157",
+            "title": "روابط سؤيعه مخصاص",
+            "icon": "sicon-android-tablet",
+            "path": "home.q_linkes",
+            "fields": []
         }
     ],
     "support_url": "",
