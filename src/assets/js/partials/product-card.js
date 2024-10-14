@@ -154,7 +154,7 @@ class ProductCard extends HTMLElement {
   }
 
   render(){
-    this.classList.add('product-card', 'max-w-[260px]', 'w-full', 'rounded-lg', 'bg-dark', 'pb-2', 'relative', 'shadow-lg', 'hover:shadow-xl', 'transition-transform', 'duration-300', 'ease-in-out', 'transform', 'hover:-translate-y-1'); 
+    this.classList.add('product-card', 'max-w-[260px]', 'w-full', 'rounded-lg', 'bg-[#252C46]', 'pb-2', 'relative', 'shadow-lg', 'hover:shadow-xl', 'transition-transform', 'duration-300', 'ease-in-out', 'transform', 'hover:-translate-y-1'); 
     this.setAttribute('id', this.product.id);
     this.isInWishlist = !salla.config.isGuest() && salla.storage.get('salla::wishlist', []).includes(this.product.id);
     this.innerHTML = `

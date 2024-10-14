@@ -46,10 +46,10 @@
         <!-- Price Section -->
         <div class="flex justify-center items-center gap-2 mb-4">
           {% if product.regular_price|money != product.sale_price|money %}
-          <span class="text-teal-300 text-base font-bold">{{ product.sale_price | money }}</span>
+          <span class="text-primary text-base font-bold">{{ product.sale_price | money }}</span>
           <span class="text-gray-400 text-sm line-through">{{ product.regular_price | money }}</span>
           {% else %}
-          <span class="text-teal-300 text-base font-bold">{{ product.price | money }}</span>
+          <span class="text-primary text-base font-bold">{{ product.price | money }}</span>
           {% endif %}
         </div>
       </a>
