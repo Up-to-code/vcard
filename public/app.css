@@ -543,6 +543,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mb-6{margin-bottom:1.5rem}
 .mb-8{margin-bottom:2rem}
 .me-2\.5{margin-right:0.625rem}
+.ml-2{margin-left:0.5rem}
 .ml-4{margin-left:1rem}
 .mr-1{margin-right:0.25rem}
 .mr-2{margin-right:0.5rem}
@@ -556,7 +557,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mt-5{margin-top:1.25rem}
 .mt-6{margin-top:1.5rem}
 .mt-8{margin-top:2rem}
-.ml-2{margin-left:0.5rem}
 .line-clamp-1{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1}
 .line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
 .block{display:block}
@@ -588,6 +588,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-7{height:1.75rem}
 .h-80{height:20rem}
 .h-\[1px\]{height:1px}
+.h-\[260px\]{height:260px}
 .h-\[300px\]{height:300px}
 .h-\[34px\]{height:34px}
 .h-auto{height:auto}
@@ -595,11 +596,9 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-full{height:100%}
 .h-lg-banner{height:428px}
 .h-px{height:1px}
-.h-\[260px\]{height:260px}
 .max-h-0{max-height:0px}
 .max-h-12{max-height:3rem}
 .max-h-8{max-height:2rem}
-.max-h-\[260px\]{max-height:260px}
 .max-h-\[300px\]{max-height:300px}
 .max-h-full{max-height:100%}
 .min-h-7{min-height:1.75rem}
@@ -631,7 +630,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .w-full{width:100%}
 .w-max{width:-moz-max-content;width:max-content}
 .min-w-0{min-width:0px}
-.min-w-\[260px\]{min-width:260px}
 .min-w-full{min-width:100%}
 .max-w-16{max-width:4rem}
 .max-w-3xl{max-width:48rem}
