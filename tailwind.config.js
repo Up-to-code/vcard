@@ -33,8 +33,8 @@ module.exports = {
             colors             : {
                 'dark'         : '#252C46',
                 'darker'       : '#1A1F32',
-                'danger'       : '#AE0A0A'
-
+                'danger'       : '#AE0A0A',
+ 
             },
             spacing: {
               '3.75': '15px',
