@@ -58,11 +58,10 @@ class ProductCard extends HTMLElement {
 
   getProductBadge() {
     if (this.product.promotion_title) {
-      return `<div class="s-product-card-promotion-title">${this.product.promotion_title}</div>`
+      return `<div class="absolute z-10 top-2 right-2 bg-red-500 text-white text-xs px-3 py-1 rounded-md animate-pulse">${this.product.promotion_title}</div>`
     }
     if (this.showQuantity && this.product?.quantity) {
-      return `<div
-        class="s-product-card-quantity">${this.remained} ${salla.helpers.number(this.product?.quantity)}</div>`
+      return `<div class="s-product-card-quantity">${this.remained} ${salla.helpers.number(this.product?.quantity)}</div>`
     }
     if (this.showQuantity && this.product?.is_out_of_stock) {
       return `<div class="s-product-card-out-badge">${this.outOfStock}</div>`
@@ -81,9 +80,9 @@ class ProductCard extends HTMLElement {
   getProductPrice() {
     let price = '';
     if (this.product.is_on_sale) {
-      price = `<div class="s-product-card-sale-price">
-                <h4>${this.getPriceFormat(this.product.sale_price)}</h4>
-                <span>${this.getPriceFormat(this.product?.regular_price)}</span>
+      price = `<div class="flex justify-center items-center gap-2 mb-4">
+                <span class="text-primary text-base font-bold">${this.getPriceFormat(this.product.sale_price)}</span>
+                <span class="text-gray-400 text-sm line-through">${this.getPriceFormat(this.product?.regular_price)}</span>
               </div>`;
     }
     else if (this.product.starting_price) {
@@ -93,7 +92,7 @@ class ProductCard extends HTMLElement {
               </div>`
     }
     else{
-      price = `<h4 class="s-product-card-price">${this.getPriceFormat(this.product?.price)}</h4>`
+      price = `<span class="text-primary text-base font-bold">${this.getPriceFormat(this.product?.price)}</span>`
     }
 
     return price;
@@ -155,131 +154,43 @@ class ProductCard extends HTMLElement {
   }
 
   render(){
-    this.classList.add('s-product-card-entry'); 
+    this.classList.add('product-card', 'max-w-[260px]', 'w-full', 'rounded-lg', 'bg-dark', 'pb-2', 'relative', 'shadow-lg', 'hover:shadow-xl', 'transition-transform', 'duration-300', 'ease-in-out', 'transform', 'hover:-translate-y-1'); 
     this.setAttribute('id', this.product.id);
-    !this.horizontal && !this.fullImage && !this.minimal? this.classList.add('s-product-card-vertical') : '';
-    this.horizontal && !this.fullImage && !this.minimal? this.classList.add('s-product-card-horizontal') : '';
-    this.fitImageHeight && !this.isSpecial && !this.fullImage && !this.minimal? this.classList.add('s-product-card-fit-height') : '';
-    this.isSpecial? this.classList.add('s-product-card-special') : '';
-    this.fullImage? this.classList.add('s-product-card-full-image') : '';
-    this.minimal? this.classList.add('s-product-card-minimal') : '';
-    this.product?.donation?  this.classList.add('s-product-card-donation') : '';
-    this.shadowOnHover?  this.classList.add('s-product-card-shadow') : '';
-    this.product?.is_out_of_stock?  this.classList.add('s-product-card-out-of-stock') : '';
     this.isInWishlist = !salla.config.isGuest() && salla.storage.get('salla::wishlist', []).includes(this.product.id);
     this.innerHTML = `
-        <div class="${!this.fullImage ? 's-product-card-image' : 's-product-card-image-full'}">
-          <a href="${this.product?.url}">
-            <img class="s-product-card-image-${salla.url.is_placeholder(this.product?.image?.url)
-              ? 'contain'
-              : this.fitImageHeight
-                ? this.fitImageHeight
-                : 'cover'} lazy"
+        ${this.getProductBadge()}
+        <a href="${this.product?.url}" class="block group">
+          <div class="relative overflow-hidden rounded-md">
+            <img class="w-full h-[260px] object-cover mb-3 transition-transform duration-300 transform group-hover:scale-105 lazy"
               src=${this.placeholder}
               alt=${this.product?.image?.alt}
               data-src=${this.product?.image?.url || this.product?.thumbnail}
             />
-            ${!this.fullImage && !this.minimal ? this.getProductBadge() : ''}
-          </a>
-          ${this.fullImage ? `<a href="${this.product?.url}" aria-label=${this.product.name} class="s-product-card-overlay"></a>`:''}
-          ${!this.horizontal && !this.fullImage ?
-            `<salla-button
-              shape="icon"
-              fill="outline"
-              color="light"
-              name="product-name-${this.product.id}"
-              aria-label="Add or remove to wishlist"
-              class="s-product-card-wishlist-btn animated ${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
-              onclick="salla.wishlist.toggle(${this.product.id})"
-              data-id="${this.product.id}">
-              <i class="sicon-heart"></i>
-            </salla-button>` : ``
-          }
-        </div>
-        <div class="s-product-card-content">
-          ${this.isSpecial && this.product?.quantity ?
-            `<div class="s-product-card-content-pie">
-              <span>
-                <b>${salla.helpers.number(this.product?.quantity)}</b>
-                ${this.remained}
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -1 36 34" class="s-product-card-content-pie-svg">
-                <circle cx="16" cy="16" r="15.9155" class="s-product-card-content-pie-svg-base" />
-                <circle cx="16" cy="16" r="15.9155" class="s-product-card-content-pie-svg-bar" />
+          </div>
+          <div class="min-h-[3.2rem] px-2">
+            <p class="text-white text-sm md:text-base text-center leading-tight mb-2 line-clamp-2">${this.product?.name}</p>
+          </div>
+          ${this.product?.subtitle && !this.minimal ?
+            `<div class="text-center text-gray-400 text-sm mb-2">${this.product?.subtitle}</div>`
+            : ``}
+          ${this.getProductPrice()}
+        </a>
+        <div class="flex justify-between items-center px-2 z-10">
+          <salla-add-product-button product-id="${this.product.id}">
+            <div class="flex items-center gap-2 text-white hover:text-teal-300">
+              <span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel() }</span>
+              <svg class="w-4 h-4 transition-transform duration-300 transform hover:rotate-12 hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M6 6h15l-1.5 9h-13L3 3H1"></path>
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
               </svg>
-            </div>`
-            : ``}
-
-          <div class="s-product-card-content-main ${this.isSpecial ? 's-product-card-content-extra-padding' : ''}">
-            <h3 class="s-product-card-content-title">
-              <a href="${this.product?.url}">${this.product?.name}</a>
-            </h3>
-
-            ${this.product?.subtitle && !this.minimal ?
-              `<p class="s-product-card-content-subtitle opacity-80">${this.product?.subtitle}</p>`
-              : ``}
-          </div>
-          ${this.product?.donation && !this.minimal && !this.fullImage ?
-          `<salla-progress-bar donation=${JSON.stringify(this.product?.donation)}></salla-progress-bar>
-          <div class="s-product-card-donation-input">
-            ${this.product?.donation?.can_donate ?
-              `<label for="donation-amount-${this.product.id}">${this.donationAmount} <span>*</span></label>
-              <input
-                type="text"
-                onInput="${e => {
-                  salla.helpers.inputDigitsOnly(e.target);
-                  this.addBtn.donatingAmount = (e.target).value;
-                }}"
-                id="donation-amount-${this.product.id}"
-                name="donating_amount"
-                class="s-form-control"
-                placeholder="${this.donationAmount}" />`
-              : ``}
-          </div>`
-            : ''}
-          <div class="s-product-card-content-sub ${this.isSpecial ? 's-product-card-content-extra-padding' : ''}">
-            ${this.product?.donation?.can_donate ? '' : this.getProductPrice()}
-            ${this.product?.rating?.stars ?
-              `<div class="s-product-card-rating">
-                <i class="sicon-star2 before:text-orange-300"></i>
-                <span>${this.product.rating.stars}</span>
-              </div>`
-               : ``}
-          </div>
-
-          ${this.isSpecial && this.product.discount_ends
-            ? `<salla-count-down date="${this.formatDate(this.product.discount_ends)}" end-of-day=${true} boxed=${true}
-              labeled=${true} />`
-            : ``}
-
-
-          ${!this.hideAddBtn ?
-            `<div class="s-product-card-content-footer gap-2">
-              <salla-add-product-button fill="outline" width="wide"
-                product-id="${this.product.id}"
-                product-status="${this.product.status}"
-                product-type="${this.product.type}">
-                ${this.product.status == 'sale' ? 
-                    `<i class="text-base sicon-${ this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
-                  }
-                <span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel() }</span>
-              </salla-add-product-button>
-
-              ${this.horizontal || this.fullImage ?
-                `<salla-button 
-                  shape="icon" 
-                  fill="outline" 
-                  color="light" 
-                  id="card-wishlist-btn-${this.product.id}-horizontal"
-                  aria-label="Add or remove to wishlist"
-                  class="s-product-card-wishlist-btn animated ${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
-                  onclick="salla.wishlist.toggle(${this.product.id})"
-                  data-id="${this.product.id}">
-                  <i class="sicon-heart"></i> 
-                </salla-button>`
-                : ``}
-            </div>`
-            : ``}
+            </div>
+          </salla-add-product-button>
+          <salla-button shape="icon" fill="outline" color="light" class="s-product-card-wishlist-btn hover:text-teal-300">
+            <button shape="icon" class="like" data-id="${this.product.id}" type="button">
+              <i class="sicon-heart" style="font-size: 1.5rem;"></i>
+            </button>
+          </salla-button>
         </div>
       `
 
