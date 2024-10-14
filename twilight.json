@@ -1105,13 +1105,6 @@
                     "maxLength": 5
                 }
             ]
-        },
-        {
-            "key": "1d9f16a6-b429-4489-827f-07e26eab494d",
-            "title": "تصنفات",
-            "icon": "sicon-ul",
-            "path": "header.categories",
-            "fields": []
         }
     ],
     "support_url": "",
