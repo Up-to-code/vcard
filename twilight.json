@@ -1201,7 +1201,7 @@
         {
             "key": "83ec5483-b880-4e41-93cf-770c31d4b408",
             "title": "الاسأله الشأعه",
-            "icon": "sicon-store",
+            "icon": "sicon-ul",
             "path": "home.q",
             "fields": [
                 {
