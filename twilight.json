@@ -1286,6 +1286,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "c5753c3b-4940-4f0c-ac8d-92ea6362b03e",
+            "title": "البنرات المحسنه",
+            "icon": "sicon-image1",
+            "path": "home.baner",
+            "fields": []
         }
     ],
     "support_url": "",
