@@ -1,77 +1,62 @@
 <header class="store-header">
-  {# Main Nav #}
-  <div
-    id="mainnav"
-    class="main-nav-container shadow-default bg-[#1a1f32] text-white"
-  >
+  <div id="mainnav" class="main-nav-container shadow-default bg-[#1a1f32] text-white">
     <div class="inner bg-inherit">
       <div class="container">
         <div class="flex items-center justify-between relative">
-          
-          {# Left Section: Mobile Menu Icon and Custom Menu #}
+          <!-- Left Section: Mobile Menu Icon and Custom Menu -->
           <div class="flex items-center z-40">
             <a
               class="lg:hidden mburger mburger--collapse leading-none rtl:ml-4 ltr:mr-4"
               href="#mobile-menu"
               aria-label="Open-menu"
             >
-              <i class="sicon-menu text-primary text-2xl"></i>
+              <i class="sicon-menu text-primary text-2xl transition-transform duration-200 transform hover:scale-105"></i>
             </a>
-            
-            {# Custom Main Menu (Hidden on small screens) #}
             <custom-main-menu class="hidden lg:block"></custom-main-menu>
           </div>
-
-          {# Center Section: Store Logo (Centered) #}
-          <div
-            class="absolute inset-x-0 mx-auto flex justify-center items-center"
-          >
+          
+          <!-- Center Section: Store Logo -->
+          <div class="absolute inset-x-0 mx-auto flex justify-center items-center">
             <a class="navbar-brand" href="{{ store.url }}">
               <img
                 fetchpriority="high"
-                width="100%"
-                height="100%"
                 loading="eager"
                 src="{{ store.logo }}"
                 alt="{{ store.name }} logo"
-                class="h-12 w-auto"
+                class="h-12 w-auto object-contain"
               />
               {% if is_page('index') %}
-              <h1 class="sr-only">{{ store.name }}</h1>
+                <h1 class="sr-only">{{ store.name }}</h1>
               {% else %}
-              <h2 class="sr-only">{{ store.name }}</h2>
+                <h2 class="sr-only">{{ store.name }}</h2>
               {% endif %}
             </a>
           </div>
 
-          {# Right Section: User Menu and Cart Summary #}
+          <!-- Right Section: User Menu and Cart Summary -->
           <div class="flex items-center justify-end gap-6 z-40">
-            
-            {# User Menu Icon or Login Button #}
             {% if user.type == 'user' %}
-            <salla-user-menu avatar-only show-header  ></salla-user-menu>
+              <salla-user-menu avatar-only show-header></salla-user-menu>
             {% else %}
-            <button
-              class="header-btn"
-              aria-label="user-icon"
-              onclick="salla.event.dispatch('login::open')"
-            >
-              <i class="header-btn__icon sicon-user-circle text-2xl"></i>
-            </button>
+              <button
+                class="header-btn transition-transform duration-200 transform hover:scale-105"
+                aria-label="user-icon"
+                onclick="salla.event.dispatch('login::open')"
+              >
+                <i class="header-btn__icon sicon-user-circle text-2xl"></i>
+              </button>
             {% endif %}
 
-            {# Cart Summary Icon #}
-            <div class="relative flex items-center justify-center px-4">
-              <a href="{{ store.url }}/cart" class="s-cart-summary">
-              <i class="sicon-cart2 text-2xl"></i>
-              <span class="absolute -top-2 right-[6px] bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {{ cart.items_count }}
-              </span>
-            </a>
-            <div>
-              {{ cart.total }}
+            <!-- Cart Summary Icon -->
+            <div class="relative flex items-center justify-center gap-2 px-4">
+              <a href="{{ store.url }}/cart" class="s-cart-summary transition-transform duration-200 transform hover:scale-105">
+                <i class="sicon-cart2 text-2xl"></i>
+                <span class="absolute -top-2 right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {{ cart.items_count }}
+                </span>
+              </a>
+              <div class="text-sm text-gray-400">{{ cart.total }}</div>
             </div>
-            
           </div>
         </div>
       </div>
