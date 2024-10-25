@@ -1197,6 +1197,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "83ec5483-b880-4e41-93cf-770c31d4b408",
+            "title": "الاسأله الشأعه",
+            "icon": "sicon-store",
+            "path": "home.q",
+            "fields": []
         }
     ],
     "support_url": "",
