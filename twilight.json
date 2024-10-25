@@ -1203,7 +1203,89 @@
             "title": "الاسأله الشأعه",
             "icon": "sicon-store",
             "path": "home.q",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "static",
+                    "format": "title",
+                    "label": "Title",
+                    "value": "<h2> الاسأله الشأعه </h2>",
+                    "variant": "h1",
+                    "icon": "sicon-format-text"
+                },
+                {
+                    "id": "htitle",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title",
+                    "description": "عنوان",
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "time",
+                    "type": "string",
+                    "format": "time",
+                    "inputType": "time",
+                    "label": "Time",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-time",
+                    "value": "01:00",
+                    "required": false
+                },
+                {
+                    "id": "q",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "q",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "q.title",
+                            "type": "string",
+                            "format": "text",
+                            "label": "العنوان",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "q.desc",
+                            "type": "string",
+                            "format": "richtext",
+                            "label": "وصف السأل",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Your text here ..",
+                            "icon": "sicon-touch-type",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 60,
+                            "maxLength": 1000
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "",
