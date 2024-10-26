@@ -1205,15 +1205,6 @@
             "path": "home.q",
             "fields": [
                 {
-                    "id": "title",
-                    "type": "static",
-                    "format": "title",
-                    "label": "Title",
-                    "value": "<h2> الاسأله الشأعه </h2>",
-                    "variant": "h1",
-                    "icon": "sicon-format-text"
-                },
-                {
                     "id": "htitle",
                     "type": "string",
                     "format": "text",
@@ -1227,18 +1218,6 @@
                     "required": false,
                     "minLength": 6,
                     "maxLength": 30
-                },
-                {
-                    "id": "time",
-                    "type": "string",
-                    "format": "time",
-                    "inputType": "time",
-                    "label": "Time",
-                    "description": null,
-                    "labelHTML": null,
-                    "icon": "sicon-time",
-                    "value": "01:00",
-                    "required": false
                 },
                 {
                     "id": "q",
