@@ -67,7 +67,7 @@
           </div>
         </salla-add-product-button>
         
-        <salla-button shape="icon" fill="outline" color="light" class="s-product-card-wishlist-btn hover:text-teal-300">
+        <salla-button shape="icon" nam="product-name-{{product.id}}" fill="outline" aria-label="Add or remove to wishlist" color="light" class="s-product-card-wishlist-btn hover:text-teal-300" onclick="salla.wishlist.toggle({{product.id}})" data-id="{{product.id}}" size="medium" width="normal" type="button">
           <button shape="icon" class="like" data-id="{{product.id}}" type="button">
             <i class="sicon-heart" style="font-size: 1.5rem;"></i>
           </button>
@@ -77,3 +77,4 @@
     {% endfor %}
   </div>
 </section>
+ 
