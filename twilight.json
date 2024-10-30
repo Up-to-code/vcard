@@ -1300,6 +1300,13 @@
                     "required": false
                 }
             ]
+        },
+        {
+            "key": "9b0a35f1-b826-4b26-810a-1a5254c625c0",
+            "title": "اصناف مخصص",
+            "icon": "sicon-award-ribbon",
+            "path": "home.categorie",
+            "fields": []
         }
     ],
     "support_url": "",
