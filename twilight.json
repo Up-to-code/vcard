@@ -1108,8 +1108,8 @@
         },
         {
             "key": "b42a4437-b9df-412c-9adf-bdc05ec9f157",
-            "title": "روابط سؤيعه مخصاص",
-            "icon": "sicon-android-tablet",
+            "title": "روابط سريعه مخصاص",
+            "icon": "sicon-link1",
             "path": "home.q_linkes",
             "fields": [
                 {
