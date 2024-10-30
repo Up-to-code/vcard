@@ -51,4 +51,12 @@
   border: none;
   padding: 0px !important;
   font-size: 1rem;
+}.s-block--slider-with-bg{
+  background-color: transparent;
+  padding: 1rem;
+  padding: 0.5rem;
+}
+ 
+.s-user-menu-dropdown-item-title{
+  @apply text-white;
 }
