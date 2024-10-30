@@ -1306,7 +1306,24 @@
             "title": "اصناف مخصص",
             "icon": "sicon-award-ribbon",
             "path": "home.categorie",
-            "fields": []
+            "fields": [
+                {
+                    "id": "categorie",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "اصناف مخصص",
+                    "description": "اصناف مخصص",
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [],
+                    "options": [],
+                    "source": "Categories",
+                    "multichoice": true,
+                    "searchable": true,
+                    "required": false,
+                    "value": []
+                }
+            ]
         }
     ],
     "support_url": "",
