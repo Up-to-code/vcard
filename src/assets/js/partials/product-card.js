@@ -80,12 +80,12 @@ class ProductCard extends HTMLElement {
   getProductPrice() {
     let price = '';
     if (this.product.is_on_sale) {
-      price = `<div class="flex justify-center items-center gap-2 mb-4 px-4">
+      price = `<div class="flex justify-center items-center gap-2 mb-4 px-6">
                 <span class="text-primary text-base font-bold">${this.getPriceFormat(this.product.sale_price)}</span>
                 <span class="text-gray-400 text-sm line-through">${this.getPriceFormat(this.product?.regular_price)}</span>
               </div>`;
     } else if (this.product.starting_price) {
-      price = `<div class="s-product-card-starting-price px-4">
+      price = `<div class="s-product-card-starting-price px-6">
                   <p>${this.startingPrice}</p>
                   <h4>${this.getPriceFormat(this.product?.starting_price)}</h4>
                 </div>`;
@@ -126,7 +126,7 @@ class ProductCard extends HTMLElement {
       return;
     }
 
-    this.classList.add('product-card', 'max-w-[260px]','py-4',  'w-full', 'rounded-lg', 'bg-[#2C345E]', 'pb-2',"rounded" ,'relative', 'shadow-lg', 'hover:shadow-xl', 'transition-transform', 'duration-300', 'ease-in-out', 'transform', 'hover:-translate-y-1');
+    this.classList.add('product-card',   'max-w-[260px]','py-6',  'w-full', 'rounded-lg', 'bg-[#2C345E]', 'pb-2',"rounded" ,'relative', 'shadow-lg', 'hover:shadow-xl', 'transition-transform', 'duration-300', 'ease-in-out', 'transform', 'hover:-translate-y-1');
     this.setAttribute('id', this.product.id);
     this.isInWishlist = !salla.config.isGuest() && salla.storage.get('salla::wishlist', []).includes(this.product.id);
     
@@ -134,7 +134,7 @@ class ProductCard extends HTMLElement {
       <a href="${this.product?.url}" class="block group bg-[#2C345E]" aria-label="${this.product?.name}">
         ${this.getProductBadge()}
         <div class="relative overflow-hidden rounded-md">
-          <img class="w-full h-[260px] object-cover mb-3 transition-transform duration-300 transform group-hover:scale-105 lazy"
+          <img class="w-full h-[260px] object-cover mb-3 transition-transform duration-300 transform  lazy"
                src="${this.placeholder}"
                alt="${this.product?.image?.alt || 'Product Image'}"
                data-src="${this.product?.image?.url || this.product?.thumbnail}" />
@@ -145,7 +145,7 @@ class ProductCard extends HTMLElement {
         ${this.product?.subtitle ? `<div class="text-center text-gray-400 text-sm mb-2">${this.product?.subtitle}</div>` : ''}
         ${this.getProductPrice()}
       </a>
-      <div class="flex mb-4 justify-between items-center px-2 z-10 bg-[#2C345E]">
+      <div class="flex mb-4 justify-between items-center px-2 z-10 bg-[#2C345E] rounded-b-md p-2">
         <salla-add-product-button product-id="${this.product.id}">
           <div class="flex items-center gap-2 text-white hover:text-teal-300 flex-1">
             <span>${this.product.add_to_cart_label || this.getAddButtonLabel()}</span>

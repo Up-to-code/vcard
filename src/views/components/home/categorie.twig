@@ -1,10 +1,42 @@
-{% for item in component.categorie %}
-     <div class="flex flex-col items-center justify-center w-full h-full">
-        <img src="{{ item.image }}" alt="{{ item.name }}" class="w-full h-full object-cover">
-        <p>
-         <a href="{{ item.url }}" class="text-center text-white text-2xl font-bold hover:text-primary transition-all duration-300">
-           {{ item.name }}
-         </a>
-       </p>
-     </div>
-{% endfor %}
+<section class="s-block s-angel--divider        no-home-tab  angel_anime animate__ animate__fadeIn   merge-bottom centered-title" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s;"></section>
+	<div class="divider-container container">
+		<div class="s-block__title divider-title">
+			<div class="flex flex-col w-full">
+				<div class="flex-center w-full">
+
+          <span class="inline-block vertical-lines h-[1px] w-full bg-gray-500/50 da-bgg  " data-wow-delay="0.8s"></span>
+					
+											<div class="flex-center flex-col px-4 md:px-10 z-1 gap-1 md:gap-2">
+							
+						<div class="divider-wrapper">
+						<div class="1">
+							
+							<div class="divider-title 1">
+																	<h2 class="text-white w-full px-1 da-cp whitespace-nowrap " data-wow-delay="0.1s">تصنيفات شائعة</h2>
+								
+															</div>
+						</div>
+
+													</div>
+
+							
+						</div>
+					
+											<span class="inline-block vertical-lines h-[1px] w-full bg-gray-500/50 da-bgg  " data-wow-delay="0.8s"></span>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<salla-slider type="carousel" id="main-links-12" show-controls="" class="s-slider-wrapper carousel-slider s-slider-has-notitle s-slider-v-centered s-slider-horizontal hydrated" block-title="" block-subtitle="" display-all-url="" direction="rtl">
+  {% for item in component.categorie %}
+  <div>
+        <a href="{{ item.url }}" class=" relative flex flex-col border-transparent p-4 items-center justify-center rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border  mx-4 bg-[#252C46] hover:bg-primary hover:text-white w-36 block">
+        <img src="{{ item.image }}" alt="{{ item.name }}" class="w-18  object-cover rounded-full transition-transform duration-300 hover:scale-105 mb-3">
+        <h4 class="leading-none line-clamp-2 text-center text-white text-lg font-semibold  scale-110 transition-all duration-300 hover:scale-105">{{ item.name }}</h4>
+     </a> 
+  </div>
+
+  {% endfor %}
+</salla-slider>
