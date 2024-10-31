@@ -218,7 +218,7 @@
                     <small class="color-grey">{{ trans('pages.products.tax_included') }}</small>
                 {% endif %}
 
-                <h1 class="text-xl md:text-2xl leading-10 font-bold mb-6 text-gray-800">{{ product.name }}</h1>
+                <h1 class="text-xl md:text-2xl leading-10 font-bold mb-6 ">{{ product.name }}</h1>
 
                 {% if product.subtitle %}
                     <h2 class="product-entry__sub-title text-sm text-gray-500 leading-6 mb-2.5">
@@ -248,13 +248,13 @@
                 <div class="product__description p-2 px-5 sm:p-1 leading-7 mb-3">
                     {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
                     {% if product.has_read_more %}
-                        <article class="article article--main relative leading-8 overflow-hidden transition-all max-h-0 duration-300 py-4"
+                        <article class="article article--main relative leading-8 overflow-hidden transition-all max-h-0 duration-300 py-4 text-white"
                             id="more-content" style="max-height:5.25rem">
                             {{ product_desc|raw }}
                         </article>
 
                         {# Read More Button #}
-                        <a id="btn-show-more" class="link--primary inline-block mt-2 cursor-pointer">
+                        <a id="btn-show-more" class="link--primary inline-block mt-2 cursor-pointer text-white">
                             {{ trans('pages.products.read_more') }}
                         </a>
                     {% else %}
@@ -345,7 +345,7 @@
                     <section class="flex bg-white p-5 sm:pb-0 rounded-md rounded-b-none">
                         <div class="center-between w-full">
                             <label class="form-label">
-                                <b class="block">
+                                <b class="block text-white">
                                     {{ trans('pages.products.price') }}
                                 </b>
                             </label>
@@ -357,13 +357,13 @@
                               </div>
                               <div class="starting-or-normal-price gap-4 {{ product.is_on_sale ? 'hidden' : 'flex' }}">
                                 {% if product.starting_price %} 
-                                  <span class="starting-price-title">{{ trans('pages.products.starting_price') }}</span>
+                                  <span class="starting-price-title text-white">{{ trans('pages.products.starting_price') }}</span>
                                 {% endif %} 
-                                <h2 class="total-price font-bold text-xl inline-block"> {{product.starting_price ? product.starting_price|money : product.price|money }}</h2>
+                                <h2 class="total-price font-bold text-xl inline-block text-white"> {{product.starting_price ? product.starting_price|money : product.price|money }}</h2>
                               </div>
                             </div>
 
-                            <div class="out-of-stock min-h-7 leading-7 hidden text-base text-red-600 !opacity-50 font-bold">{{ trans('pages.products.out_of_stock')}}</div>
+                            <div class="out-of-stock min-h-7 leading-7 hidden text-base text-red-600 !opacity-50 font-bold ">{{ trans('pages.products.out_of_stock')}}</div>
                         </div>
                     </section>
                     <section class="sticky-product-bar bg-white p-5 rounded-md rounded-b-none">
@@ -372,11 +372,11 @@
                             <input type="hidden" value="1" name="quantity" aria-label="Quantity"/>
                         {% else %}
                             <div class="sticky-product-bar__quantity center-between mb-5">
-                                <label class="form-label font-bold">
+                                <label class=" font-bold text-white">
                                     {{ trans('pages.products.quantity') }}
                                 </label>
                                 <salla-quantity-input max="{{ product.max_quantity }}" value="1" name="quantity" aria-label="Quantity"
-                                  class="border-gray-200 flex justify-end"></salla-quantity-input>
+                                  class="border-dark flex justify-end"></salla-quantity-input>
                             </div>
                         {% endif %}
                         {# Add to cart #}
