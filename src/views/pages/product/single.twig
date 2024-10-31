@@ -264,6 +264,9 @@
                     {% endif %}
                 </div>
 
+
+
+
                 {% if product.tags|length and theme.settings.get('show_tags', true) %}
                     <div class="mb-3">
                         {% for tag in product.tags %}
@@ -331,6 +334,8 @@
                     </section>
                 {% endif %}
 
+           
+            
                 <form class="form product-form" enctype="multipart/form-data" method="post"
                       onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
                     <input type="hidden" name="id" value="{{ product.id }}">
