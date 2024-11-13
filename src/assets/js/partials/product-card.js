@@ -80,17 +80,17 @@ class ProductCard extends HTMLElement {
   getProductPrice() {
     let price = '';
     if (this.product.is_on_sale) {
-      price = `<div class="flex justify-center items-center gap-2 mb-4 px-6">
+      price = `<div class="flex justify-center items-center gap-2 pb-2 px-6">
                 <span class="text-primary text-base font-bold">${this.getPriceFormat(this.product.sale_price)}</span>
                 <span class="text-gray-400 text-sm line-through">${this.getPriceFormat(this.product?.regular_price)}</span>
               </div>`;
     } else if (this.product.starting_price) {
-      price = `<div class="s-product-card-starting-price px-6">
+      price = `<div class="s-product-card-starting-price px-6 py-2">
                   <p>${this.startingPrice}</p>
                   <h4>${this.getPriceFormat(this.product?.starting_price)}</h4>
                 </div>`;
     } else {
-      price = `<span class="text-primary text-base font-bold">${this.getPriceFormat(this.product?.price)}</span>`;
+      price = `<span class="text-primary text-base font-bold px6 pb-2">${this.getPriceFormat(this.product?.price)}</span>`;
     }
     return price;
   }
